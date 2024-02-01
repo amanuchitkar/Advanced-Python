@@ -1,0 +1,8 @@
+print("Enter two number which you can add")
+num1 = input()
+num2 = input()
+print("The sum of ", num1, " + ", num2, " = ", int(num1) + int(num2))
+print("The substraction of ", num1, " - ", num2, " = ", int(num1) - int(num2))
+print("The multiplication of ", num1, " x ", num2, " = ", int(num1) * int(num2))
+print("The Divide of ", num1, " / ", num2, " = ", int(num1) / int(num2))
+print("The factorial of ", num1, " % ", num2, " = ", int(num1) % int(num2))
