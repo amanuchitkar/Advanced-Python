@@ -1,4 +1,5 @@
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder
 
 
 # def read_csv(file_name):
@@ -18,9 +19,8 @@ dfD = pd.get_dummies(df, columns=['type'])
 # print(dfD)
 
 df1=pd.read_csv("Iris.csv")
-print(df1.head())
-from sklearn.preprocessing import LabelEncoder
+# print(df1.head())
 
 le=LabelEncoder()
 df1['Species']=le.fit_transform(df1['Species'])
-print(df1)
+# print(df1)
