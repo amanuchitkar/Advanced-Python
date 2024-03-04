@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Replace 'your_file.csv' with the actual path to your CSV file
-file_path = 'collagedata\CollageEmail_Id.csv'
+file_path = 'Advance python\collagedata\EmailTemplate.csv'
 
 # Read the CSV file into a DataFrame
 df = pd.read_csv(file_path)
@@ -34,7 +34,7 @@ df['Email Address [Required]'] = df['Email Address [Required]'].apply(Update_Gma
 # print(df['Email Address [Required]'])
 
 # # Save the updated DataFrame to a new CSV file
-output_file_path = 'output_file.csv'
-df.to_csv(output_file_path, index=False)
+# output_file_path = 'output_file.csv'
+# df.to_csv(output_file_path, index=False)
 
 # print(f"Conversion complete. Updated data saved to {output_file_path}")
