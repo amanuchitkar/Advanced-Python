@@ -11,26 +11,28 @@ def compress_image(input_image_path, output_image_path, quality=50):
     return output_image_path
 
 def compress_pdf(input_pdf_path, output_pdf_path, quality=5):
-    # with open(input_pdf_path, 'rb') as f:
-    #     reader = PyPDF2.PdfReader(f)
-    #     writer = PyPDF2.PdfWriter()
+        
+    with open(input_pdf_path, 'rb') as f:
+            try:
+                reader = PyPDF2.PdfReader(f)
+                writer = PyPDF2.PdfWriter()
 
-    #     for page_num in range(len(reader.pages)):
-    #         page = reader.pages[page_num]
-    #         page.compress_content_streams(compression_quality)
-    #         writer.add_page(page)
+                for page_num in range(len(reader.pages)):
+                    page = reader.pages[page_num]
+                    page.compress_content_streams()
+                    writer.add_page(page)
 
-    #     with open(output_pdf_path, 'wb') as output_file:
-    #         writer.write(output_file)
-    try:
-        doc = fitz.open(input_pdf_path)
-        doc.save(output_pdf_path, compress_pdf )
-        doc.close()
-        return output_pdf_path
-    except Exception as e:
-        # messagebox.showerror('Error', f'An error occurred: {str(e)}')
-        print('Error', f'An error occurred: {str(e)}')
-        return None
+                with open(output_pdf_path, 'wb') as output_file:
+                    writer.write(output_file)
+                return output_pdf_path
+    # try:
+    #     doc = fitz.open(input_pdf_path)
+    #     doc.save(output_pdf_path, compress_pdf=quality )
+    #     doc.close()
+            except Exception as e:
+                # messagebox.showerror('Error', f'An error occurred: {str(e)}')
+                print('Error', f'An error occurred: {str(e)}')
+                return None
 
     return output_pdf_path
 compress_pdf("pdf.pdf","output.pdf")
